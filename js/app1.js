@@ -56,7 +56,7 @@ App = {
 
 
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $(document).on('click', '.btn-adopt', App.handleValues);
   },
 
    markValues: function(writers, account) {
