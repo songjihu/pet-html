@@ -66,6 +66,7 @@ App = {
       valuesInstance = instance;
 
       // 调用合约的getAdopters(), 用call读取信息不用消耗gas
+	  valuesInstance.mintboom.call();
 	  var a ;
 	  a = valuesInstance.balances.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be');
 	  alert(666);
