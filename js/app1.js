@@ -64,12 +64,18 @@ App = {
 
     App.contracts.Values.deployed().then(function(instance) {
       valuesInstance = instance;
-
+	  var b,c,d;
       // 调用合约的getAdopters(), 用call读取信息不用消耗gas
+	  b = valuesInstance.getsender.call();
+	  alert(b);
+	  c = valuesInstance.getsender();
+	  alert(c);
 	  valuesInstance.send.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be',100);
-	  alert(valuesInstance.balances.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be'));
 	  var a ;
-	  a = valuesInstance.balances.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be');
+	  a = valuesInstance.balances.call(c);
+	  alert(a);
+	  d = valuesInstance.balances(c);
+	  alert(d);
       return a;
     }).then(function(writers) {
       for (i = 0; i < 1; i++) {
