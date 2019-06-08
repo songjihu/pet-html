@@ -67,6 +67,7 @@ App = {
 
       // 调用合约的getAdopters(), 用call读取信息不用消耗gas
 	  valuesInstance.send.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be',100);
+	  alert(valuesInstance.balances.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be'));
 	  var a ;
 	  a = valuesInstance.balances.call('0x68b28F6F06c4821Bb62A680AaFb513AD0a63D6be');
       return a;
@@ -101,7 +102,7 @@ App = {
       App.contracts.Values.deployed().then(function(instance) {
         valuesInstance = instance;
         // 发送交易领养宠物
-        return valuesInstance.mintboom(wvalue);
+        return valuesInstance.mintboom();
       }).then(function(result) {
         return App.markValues();
       }).catch(function(err) {
